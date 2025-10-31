@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Computer Networks - Home</title>
+
+  <!-- Inline CSS (from style.css) -->
+  <style>
+    /* --- Global Reset & Futuristic Base Styles --- */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    :root{
+      --color-dark-bg:#121212;
+      --color-light-bg:#1e1e1e;
+      --color-primary-neon:#00ffc4;
+      --color-secondary-neon:#ff0099;
+      --color-text-light:#e0e0e0;
+      --color-text-dim:#a0a0a0;
+      --border-radius:8px;
+      --transition-speed:0.3s;
+    }
+    body{
+      font-family: "Space Mono", monospace, Arial, sans-serif;
+      line-height:1.6;
+      color:var(--color-text-light);
+      background-color:var(--color-dark-bg);
+      overflow-x:hidden;
+    }
+    a{ color:var(--color-primary-neon); text-decoration:none; transition:color var(--transition-speed); }
+    a:hover{ color:var(--color-secondary-neon); text-decoration:underline; }
+
+    .content-section{ padding:80px 40px; text-align:center; }
+
+    /* Header & Nav */
+    header{
+      background-color:var(--color-light-bg);
+      color:var(--color-text-light);
+      padding:15px 40px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      position:sticky;
+      top:0;
+      z-index:1000;
+      box-shadow:0 4px 10px rgba(0,0,0,0.4);
+    }
+    .logo{
+      font-size:1.8em;
+      font-weight:bold;
+      color:var(--color-primary-neon);
+      text-shadow:0 0 5px var(--color-primary-neon);
+    }
+    nav a{
+      color:var(--color-text-dim);
+      margin-left:35px;
+      font-size:1.1em;
+      transition:color var(--transition-speed), text-shadow var(--transition-speed);
+    }
+    nav a:hover{
+      color:var(--color-primary-neon);
+      text-shadow:0 0 8px var(--color-primary-neon);
+      text-decoration:none;
+    }
+    .menu-toggle{
+      display:none;
+      background:none;
+      border:none;
+      color:var(--color-primary-neon);
+      font-size:1.8em;
+      cursor:pointer;
+    }
+
+    /* Hero */
+    .hero{
+      background:radial-gradient(circle at center, #1e1e1e 0%, #121212 70%);
+      height:80vh;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      align-items:center;
+      border-bottom:2px solid var(--color-secondary-neon);
+    }
+    .hero-content{ max-width:900px; padding:0 20px; }
+    .hero h1{
+      font-size:3.8em;
+      margin-bottom:20px;
+      color:var(--color-text-light);
+      text-transform:uppercase;
+      letter-spacing:2px;
+    }
+    .hero-subtext{
+      font-size:1.4em;
+      margin-bottom:40px;
+      color:var(--color-text-dim);
+    }
+
+    /* Buttons */
+    .btn{
+      padding:15px 40px;
+      border-radius:50px;
+      font-weight:bold;
+      text-transform:uppercase;
+      transition:all var(--transition-speed);
+      display:inline-block;
+      border:2px solid var(--color-primary-neon);
+      background:rgba(0,255,196,0.1);
+      color:var(--color-primary-neon);
+      text-shadow:0 0 5px var(--color-primary-neon);
+    }
+    .btn:hover{
+      background:var(--color-primary-neon);
+      color:var(--color-dark-bg);
+      box-shadow:0 0 15px var(--color-primary-neon);
+      transform:scale(1.05);
+      text-decoration:none;
+    }
+    .btn-secondary{
+      border:2px solid var(--color-secondary-neon);
+      background:transparent;
+      color:var(--color-secondary-neon);
+      text-shadow:none;
+    }
+    .btn-secondary:hover{
+      background:var(--color-secondary-neon);
+      color:var(--color-dark-bg);
+      box-shadow:0 0 15px var(--color-secondary-neon);
+    }
+
+    /* Topics Grid for preview on home CTA */
+    .cta-section{ padding:60px 40px; }
+    .section-heading{ font-size:1.8em; margin-bottom:20px; }
+
+    /* Footer */
+    footer{
+      background-color:#0d0d0d;
+      color:var(--color-text-dim);
+      text-align:center;
+      padding:20px;
+      font-size:0.9em;
+      border-top:1px solid rgba(255,255,255,0.05);
+    }
+
+    /* Responsive */
+    @media (max-width:768px){
+      header{ padding:15px 20px; }
+      .logo{ font-size:1.5em; }
+      nav{ display:none; flex-direction:column; width:100%; position:absolute; top:70px; left:0; background-color:#0d0d0d; padding-bottom:10px; box-shadow:0 4px 10px rgba(0,0,0,0.4); }
+      nav.active{ display:flex; }
+      nav a{ margin:10px 20px; border-bottom:1px solid rgba(255,255,255,0.1); padding-bottom:8px; }
+      .menu-toggle{ display:block; }
+      .hero{ height:60vh; }
+      .hero h1{ font-size:2.5em; }
+      .hero-subtext{ font-size:1.1em; }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="logo">NET_CORE // INITIATE</div>
+
+    <!-- Normal page links between files -->
+    <nav id="navbar">
+      <a href="index.html">STATUS_HOME</a>
+      <a href="topics.html">TOPIC_MATRIX</a>
+      <a href="#resources">SYSTEM_RESOURCES</a>
+      <a href="#about">ABOUT_NETWORK</a>
+    </nav>
+
+    <button class="menu-toggle" aria-label="Toggle navigation">&#9776;</button>
+  </header>
+
+  <main>
+    <section id="home" class="hero">
+      <div class="hero-content">
+        <h1>COMPUTER NETWORKS</h1>
+        <p class="hero-subtext">The command center for mastering reliable data link layer protocols: ARQ, Detection, Correction, and Flow Control.</p>
+        <a href="topics.html" class="btn">TOPIC</a>
+      </div>
+    </section>
+
+    <section id="cta" class="content-section cta-section">
+      <h2 class="section-heading" style="color:var(--color-secondary-neon);">INITIATE LEARNING SEQUENCE</h2>
+      <a href="topics.html" class="btn btn-secondary">VIEW ALL MODULES</a>
+    </section>
+
+    <!-- Optional resource/about anchors for in-page links -->
+    <section id="resources" class="content-section" style="padding-top:40px;padding-bottom:40px;">
+      <h2 class="section-heading">SYSTEM RESOURCES</h2>
+      <p style="color:var(--color-text-dim);max-width:900px;margin:0 auto;">
+        Downloadable protocol notes and reference sheets are available in the Topics matrix.
+      </p>
+    </section>
+
+    <section id="about" class="content-section" style="padding-top:40px;padding-bottom:40px;">
+      <h2 class="section-heading">ABOUT NETWORK</h2>
+      <p style="color:var(--color-text-dim);max-width:900px;margin:0 auto;">
+        NET_CORE // INITIATE — A compact educational hub for Data Link Layer concepts and practical notes.
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <p>TERMINAL &copy; 2024 NET_CORE // ALL RIGHTS RESERVED</p>
+  </footer>
+
+  <!-- Inline JS (from script.js) -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const menuToggle = document.querySelector('.menu-toggle');
+      const navbar = document.getElementById('navbar');
+
+      // Toggle navigation menu on mobile
+      menuToggle.addEventListener('click', () => {
+        navbar.classList.toggle('active');
+      });
+
+      // Close navigation menu when a link is clicked (useful for single-page scrolling or multi-page nav)
+      document.querySelectorAll('#navbar a').forEach(link => {
+        link.addEventListener('click', () => {
+          if (navbar.classList.contains('active')) {
+            navbar.classList.remove('active');
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>
